@@ -26,8 +26,8 @@ public class Ejercicio1 {
         int op;
         double sub_total;
         double suma = 0;
-        String cadena;
-        String result = "Articulo cantidad precio_unitario precio_total";
+        String cadena="";
+        String result = "Articulo\t\tCantidad\tPrecio Unitario\t\tPrecio Total";
         System.out.println("Ingrese el nombre del cliente: ");
         nom = entrada.next();
         System.out.println("Ingrese su apellido: ");
@@ -42,24 +42,24 @@ public class Ejercicio1 {
 
             sub_total = precio_unitario * cantidad;
             suma = sub_total + suma;
-            cadena = String.format("%s\t %.2f %.2f %.2f",
+            cadena += String.format("%s\t\t%.2f\t\t%.2f\t\t\t%.2f\n",
                     articulo, cantidad, precio_unitario, sub_total);
-
-            System.out.println("Desea ingresar otro producto: 1.Si 2:No"); // es un mensaje 
+            System.out.println("Desea ingresar otro producto: 1:Si 2:No"); // es un mensaje 
             op = entrada.nextInt();//lectura del mensaje
 
         } while (op != 2);// se repite la sentencia mientras la condicion sea 1
         double sub_final = suma * 12 / 100;
         precio_total = suma + sub_final;
-        System.out.printf("Factura"
-                + "\n supermecado"
-                + "\n nombre del cliente: %s\t%s"
-                + "\n%s"
-                + "\n%s"
-                + "\n\t subtotal %.2f\n "
-                + "\t iva14 %.2f\n"
-                + "\t total %.2f", nom, apellido, result, cadena,suma, sub_final, precio_total);
 
+      
+        System.out.printf("Factura\n"
+                + "Supermecado \n"
+                + "nombre del cliente: %s %s\n"
+                + "%s\t\t\t\t\t\n"
+                + "%s\t\t\t\t\t\n"
+                + "\t\t\t\t\t subtotal\t\t%.2f\t\t\n "
+                + "\t\t\t\t\t iva14 \t\t\t%.2f\t\t\n"
+                + "\t\t\t\t\t total \t\t\t%.2f\t\n", nom, apellido, result, cadena, suma, sub_final, precio_total);
     }
 
 }
